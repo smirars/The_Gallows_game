@@ -20,7 +20,66 @@
     <div class="submit_btn page-1">
         <input type="submit" value="Загадать слово" id="button_submit">
     </div>
-    <p class="page-2" id="word_to_play">Загаданное слово:</p>
+    <div class="playground page-2">
+        <svg class="default_svg">
+            <polyline points="400 470 60 470 60 60 200 60 200 120" stroke="black" stroke-width="4" fill="none"></polyline>
+            <circle id="head" r="15" cx="200" cy="135" fill="none" stroke="black" stroke-width="4"></circle>
+            <polyline id='body' points="200 150 200 230" stroke="black" stroke-width="4" fill="none"></polyline>
+            <polyline id="right_hand" points="200 160 240 190" stroke="black" stroke-width="4" fill="none"></polyline>
+            <polyline id="left_hand" points="200 160 160 190" stroke="black" stroke-width="4" fill="none"></polyline>
+            <polyline id="right_leg" points="200 230 230 270" stroke="black" stroke-width="4" fill="none"></polyline>
+            <polyline id="left_leg" points="200 230 170 270" stroke="black" stroke-width="4" fill="none"></polyline>
+        </svg>
+    </div>
+    <div class="keyword page-2">
+        <div class="keylist keylist_1">
+            <button class="list_item" value="Й" id="button">Й</button>
+            <button class="list_item" value="Ц" id="button">Ц</button>
+            <button class="list_item" value="У" id="button">У</button>
+            <button class="list_item" value="К" id="button">К</button>
+            <button class="list_item" value="Е" id="button">Е</button>
+            <button class="list_item" value="Н" id="button">Н</button>
+            <button class="list_item" value="Г" id="button">Г</button>
+            <button class="list_item" value="Ш" id="button">Ш</button>
+            <button class="list_item" value="Щ" id="button">Щ</button>
+            <button class="list_item" value="З" id="button">З</button>
+            <button class="list_item" value="Х" id="button">Х</button>
+            <button class="list_item" value="Ъ" id="button">Ъ</button>
+        </div>
+        <div class="keylist keylist_2">
+            <button class="list_item" value="Ф" id="button">Ф</button>
+            <button class="list_item" value="Ы" id="button">Ы</button>
+            <button class="list_item" value="В" id="button">В</button>
+            <button class="list_item" value="А" id="button">А</button>
+            <button class="list_item" value="П" id="button">П</button>
+            <button class="list_item" value="Р" id="button">Р</button>
+            <button class="list_item" value="О" id="button">О</button>
+            <button class="list_item" value="Л" id="button">Л</button>
+            <button class="list_item" value="Д" id="button">Д</button>
+            <button class="list_item" value="Ж" id="button">Ж</button>
+            <button class="list_item" value="Э" id="button">Э</button>            
+        </div>
+        <div class="keylist keylist_3">
+            <button class="list_item" value="Я" id="button">Я</button>
+            <button class="list_item" value="Ч" id="button">Ч</button>
+            <button class="list_item" value="С" id="button">С</button>
+            <button class="list_item" value="М" id="button">М</button>
+            <button class="list_item" value="И" id="button">И</button>
+            <button class="list_item" value="Т" id="button">Т</button>
+            <button class="list_item" value="Ь" id="button">Ь</button>
+            <button class="list_item" value="Б" id="button">Б</button>
+            <button class="list_item" value="Ю" id="button">Ю</button>            
+        </div>
+    </div>
+    <div class="page-2" id="word_to_play">
+        <div class="word_container">
+            <span class="word_letter">С</span>
+            <span class="word_letter">Л</span>
+            <span class="word_letter">О</span>
+            <span class="word_letter">В</span>
+            <span class="word_letter">О</span>  
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
