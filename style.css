@@ -1,0 +1,77 @@
+body {
+    height: 100vh;
+    color:beige;
+    margin: 0;
+    padding: 0;
+}
+
+.text-typing {
+    width: 270px;
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    font-family: 'Marck Script', cursive;
+    white-space:nowrap;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+
+.stickman_image {
+    width: 300px;
+    margin-left: 43%;
+}
+
+.stickman_image img {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.input_word {
+   font-size: 22px;
+   color: black;
+   display: inline-block;
+   margin-right: 10px;
+}
+
+input[type="text"] {
+    vertical-align: middle;
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input[type="text"]:focus {
+    box-shadow: 2px 2px 3px #202020;
+}
+
+.input {
+    width: 500px;
+    margin-inline: auto;
+    margin-bottom: 15px;
+}
+
+.submit_btn {
+    width: 100px;
+    margin-inline: auto;
+}
+
+input[type="submit"] {
+    text-wrap: wrap;
+    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #aaaaaa;
+    cursor: pointer;
+}
