@@ -14,6 +14,7 @@ const letterButtons = document.querySelectorAll('button')
 let letters = []
 let lettersToAnswer = []
 let misses = 0
+let correct = 0
 
 
 for (let i = 0; i < letterButtons.length; i++) {
@@ -24,13 +25,19 @@ for (let i = 0; i < letterButtons.length; i++) {
             if (letterButtons[i].value == letters[j]) {
                 letterButtons[i].style.backgroundColor = 'rgba(0, 255, 0, 0.7)'
                 lettersToAnswer[j].style.color = 'black'
+                correct += 1
                 found = true
             }
         }
+
         if (!found) { // Если буква не найдена
             letterButtons[i].style.backgroundColor = 'rgba(255, 0, 0, 0.7)'
             misses += 1
             humanDrawing(misses)
+        }
+
+        if (correct == letters.length) {
+            console.log("You win!")
         }
     })
 }
