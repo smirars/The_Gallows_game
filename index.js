@@ -13,6 +13,7 @@ let emptyWord = document.getElementById('word_container')
 const letterButtons = document.querySelectorAll('button')
 let letters = []
 let lettersToAnswer = []
+let misses = 0
 
 
 for (let i = 0; i < letterButtons.length; i++) {
@@ -24,11 +25,12 @@ for (let i = 0; i < letterButtons.length; i++) {
                 letterButtons[i].style.backgroundColor = 'rgba(0, 255, 0, 0.7)'
                 lettersToAnswer[j].style.color = 'black'
                 found = true
-                break
             }
         }
         if (!found) { // Если буква не найдена
             letterButtons[i].style.backgroundColor = 'rgba(255, 0, 0, 0.7)'
+            misses += 1
+            humanDrawing(misses)
         }
     })
 }
@@ -55,6 +57,31 @@ submitButton.addEventListener('click', () => {
     console.log(letters)
     lettersToAnswer = emptyWord.children
 })
+
+function humanDrawing(numberOfMisses) {
+    switch (numberOfMisses) {
+        case 1: 
+            head.style.visibility = 'visible'
+            break
+        case 2:
+            body.style.visibility = 'visible'
+            break
+        case 3: 
+            rightHand.style.visibility = 'visible'
+            break
+        case 4:
+            leftHand.style.visibility = 'visible'
+            break
+        case 5: 
+            rightLeg.style.visibility = 'visible'
+            break
+        case 6:
+            leftLeg.style.visibility = 'visible'
+            console.log('You Lose!')
+            break
+
+    }
+}
 
 head.style.visibility = 'hidden'
 body.style.visibility = 'hidden'
