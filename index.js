@@ -18,10 +18,17 @@ let lettersToAnswer = []
 for (let i = 0; i < letterButtons.length; i++) {
     letterButtons[i].addEventListener('click', () => {
         console.log(letterButtons[i].value)
+        let found = false
         for (let j = 0; j < letters.length; j++) {
             if (letterButtons[i].value == letters[j]) {
+                letterButtons[i].style.backgroundColor = 'rgba(0, 255, 0, 0.7)'
                 lettersToAnswer[j].style.color = 'black'
+                found = true
+                break
             }
+        }
+        if (!found) { // Если буква не найдена
+            letterButtons[i].style.backgroundColor = 'rgba(255, 0, 0, 0.7)'
         }
     })
 }
