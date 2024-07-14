@@ -11,6 +11,7 @@ let rightLeg = document.getElementById("right_leg")
 let leftLeg = document.getElementById("left_leg")
 let emptyWord = document.getElementById('word_container')
 const letterButtons = document.querySelectorAll('button')
+const winWindow = document.getElementById('modal_win')
 let letters = []
 let lettersToAnswer = []
 let misses = 0
@@ -37,7 +38,7 @@ for (let i = 0; i < letterButtons.length; i++) {
         }
 
         if (correct == letters.length) {
-            console.log("You win!")
+            winWindow.classList.add('modal_show')
         }
     })
 }

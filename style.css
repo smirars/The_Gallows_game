@@ -148,3 +148,29 @@ input[type="submit"]:hover {
     position: relative;
     bottom: 25px;
   }
+
+  .modal_win {
+    width: 30vw;
+    height: 40vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 20px;
+    z-index: 10;
+    background-color: rgb(235, 215, 215);
+    visibility: hidden;
+  }
+
+  .modal_show {
+    visibility: visible;
+  }
+
+  .congrats {
+    font-size: 24px;
+    color: green;
+    text-align: center;
+
+  }
