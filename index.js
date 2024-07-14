@@ -10,6 +10,21 @@ let leftHand = document.getElementById("left_hand")
 let rightLeg = document.getElementById("right_leg")
 let leftLeg = document.getElementById("left_leg")
 let emptyWord = document.getElementById('word_container')
+const letterButtons = document.querySelectorAll('button')
+let letters = []
+let lettersToAnswer = []
+
+
+for (let i = 0; i < letterButtons.length; i++) {
+    letterButtons[i].addEventListener('click', () => {
+        console.log(letterButtons[i].value)
+        for (let j = 0; j < letters.length; j++) {
+            if (letterButtons[i].value == letters[j]) {
+                lettersToAnswer[j].style.color = 'black'
+            }
+        }
+    })
+}
 
 
 submitButton.addEventListener('click', () => {
@@ -22,7 +37,7 @@ submitButton.addEventListener('click', () => {
         showItems[i].style.display = "block"; 
     }
     
-    const letters = wordPlay.split("")
+    letters = wordPlay.split("")
     for (letter in letters) {
         let emptyCell = document.createElement('span')
         emptyCell.classList.add("word_letter")
@@ -30,7 +45,8 @@ submitButton.addEventListener('click', () => {
         emptyCell.style.textTransform = 'uppercase'
         emptyWord.appendChild(emptyCell)
     }
-    
+    console.log(letters)
+    lettersToAnswer = emptyWord.children
 })
 
 head.style.visibility = 'hidden'

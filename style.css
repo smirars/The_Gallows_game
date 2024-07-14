@@ -132,7 +132,7 @@ input[type="submit"]:hover {
 .word_letter {
     font-size: 30px;
     margin-right: 5px;
-    /* color: transparent; */
+    color: transparent;
 }
 
 .word_letter:last-child {
