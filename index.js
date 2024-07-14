@@ -12,6 +12,7 @@ let leftLeg = document.getElementById("left_leg")
 let emptyWord = document.getElementById('word_container')
 const letterButtons = document.querySelectorAll('button')
 const winWindow = document.getElementById('modal_win')
+const loseWindow = document.getElementById('modal_lose')
 let letters = []
 let lettersToAnswer = []
 let misses = 0
@@ -25,6 +26,7 @@ for (let i = 0; i < letterButtons.length; i++) {
         for (let j = 0; j < letters.length; j++) {
             if (letterButtons[i].value == letters[j]) {
                 letterButtons[i].style.backgroundColor = 'rgba(0, 255, 0, 0.7)'
+                letterButtons[i].disabled = true
                 lettersToAnswer[j].style.color = 'black'
                 correct += 1
                 found = true
@@ -33,6 +35,7 @@ for (let i = 0; i < letterButtons.length; i++) {
 
         if (!found) { // Если буква не найдена
             letterButtons[i].style.backgroundColor = 'rgba(255, 0, 0, 0.7)'
+            letterButtons[i].disabled = true
             misses += 1
             humanDrawing(misses)
         }
@@ -85,7 +88,7 @@ function humanDrawing(numberOfMisses) {
             break
         case 6:
             leftLeg.style.visibility = 'visible'
-            console.log('You Lose!')
+            loseWindow.classList.add('modal_show')
             break
 
     }
