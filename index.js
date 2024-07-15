@@ -65,25 +65,35 @@ for (let i = 0; i < letterButtons.length; i++) {
 
 
 submitButton.addEventListener('click', () => {
-    const wordPlay = inputField.value
-    // wordToPlay.innerHTML = wordPlay
-    for (let i = 0; i < deleteItems.length; i++) {
-        deleteItems[i].style.display = "none"; 
-    }
-    for (let i = 0; i < showItems.length; i++) {
-        showItems[i].style.display = "block"; 
+    if (inputField.value === '') {
+        alert("Поле ввода не может быть пустое!")
+    } else  if (!(/^[\u0410-\u044f]+$/.test(inputField.value))) {
+        alert("Поле ввода должно содержать только русские буквы!")
+    } else if (inputField.value.length < 4) {
+        alert("Слово слишком короткое!")
+    } else if (inputField.value.length > 11) {
+        alert("Слово слишком длинное!")
+    } else {
+        const wordPlay = inputField.value
+        // wordToPlay.innerHTML = wordPlay
+        for (let i = 0; i < deleteItems.length; i++) {
+            deleteItems[i].style.display = "none"; 
+        }
+        for (let i = 0; i < showItems.length; i++) {
+            showItems[i].style.display = "block"; 
+        }
+        
+        letters = wordPlay.split("")
+        for (letter in letters) {
+            let emptyCell = document.createElement('span')
+            emptyCell.classList.add("word_letter")
+            emptyCell.innerHTML = letters[letter]
+            emptyCell.style.textTransform = 'uppercase'
+            emptyWord.appendChild(emptyCell)
+        }
+        lettersToAnswer = emptyWord.children
     }
     
-    letters = wordPlay.split("")
-    for (letter in letters) {
-        let emptyCell = document.createElement('span')
-        emptyCell.classList.add("word_letter")
-        emptyCell.innerHTML = letters[letter]
-        emptyCell.style.textTransform = 'uppercase'
-        emptyWord.appendChild(emptyCell)
-    }
-    console.log(letters)
-    lettersToAnswer = emptyWord.children
 })
 
 function humanDrawing(numberOfMisses) {
@@ -118,7 +128,3 @@ leftHand.style.visibility = 'hidden'
 rightLeg.style.visibility = 'hidden'
 leftLeg.style.visibility = 'hidden'
 
-// let letters = document.querySelectorAll("button")
-// for (let i = 0; i < letters.length; i++) {
-//     console.log(letters[i].value)     
-// }
