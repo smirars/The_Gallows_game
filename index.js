@@ -18,6 +18,23 @@ let lettersToAnswer = []
 let misses = 0
 let correct = 0
 
+function showInput() {
+    const btn = document.querySelector(".password__btn")
+    const input = document.querySelector(".word_input")
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle("active")
+
+        if (input.getAttribute("type") === "password") {
+            input.setAttribute("type", "text")
+        } else {
+            input.setAttribute("type", "password")
+        }
+    })
+}
+
+showInput()
+
 
 for (let i = 0; i < letterButtons.length; i++) {
     letterButtons[i].addEventListener('click', () => {
@@ -33,7 +50,7 @@ for (let i = 0; i < letterButtons.length; i++) {
             }
         }
 
-        if (!found) { // Если буква не найдена
+        if (!found) {
             letterButtons[i].style.backgroundColor = 'rgba(255, 0, 0, 0.7)'
             letterButtons[i].disabled = true
             misses += 1

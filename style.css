@@ -180,3 +180,36 @@ input[type="submit"]:hover {
     text-align: center;
   }
 
+
+  .password__label {
+    position: relative;
+  }
+
+  .password__btn.active::after {
+    width: 0;
+  }
+
+  .password__btn {
+    position: absolute;
+    right: -35px;
+    top: 0px;
+    cursor: pointer;
+  }
+
+  .password__btn::after {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #303030;
+    transform: rotate(-45deg);
+    transition: 0.4s all ease;
+  }
+
+  .password__btn img {
+    width: 30px;
+    height: 30px;
+  }
+
