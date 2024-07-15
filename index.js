@@ -18,6 +18,20 @@ let lettersToAnswer = []
 let misses = 0
 let correct = 0
 
+function showWinModal() {
+    winWindow.classList.add('modal_show')
+    for (let i = 0; i < letterButtons.length; i++) {
+        letterButtons[i].disabled = true
+    }
+}
+
+function showLoseModal() {
+    loseWindow.classList.add('modal_show')
+    for (let i = 0; i < letterButtons.length; i++) {
+        letterButtons[i].disabled = true
+    }
+}
+
 function showInput() {
     const btn = document.querySelector(".password__btn")
     const input = document.querySelector(".word_input")
@@ -58,7 +72,7 @@ for (let i = 0; i < letterButtons.length; i++) {
         }
 
         if (correct == letters.length) {
-            winWindow.classList.add('modal_show')
+            showWinModal()
         }
     })
 }
@@ -115,7 +129,7 @@ function humanDrawing(numberOfMisses) {
             break
         case 6:
             leftLeg.style.visibility = 'visible'
-            loseWindow.classList.add('modal_show')
+            showLoseModal()
             break
 
     }
