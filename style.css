@@ -178,8 +178,14 @@ input[type="submit"]:hover {
     font-size: 24px;
     color: red;
     text-align: center;
+    margin-bottom: 10px;
   }
-
+  
+  .lose_info {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+  }
 
   .password__label {
     position: relative;
@@ -213,3 +219,26 @@ input[type="submit"]:hover {
     height: 30px;
   }
 
+  .restart {
+    display: flex;
+    justify-content: center;
+  }
+
+  .restart_btn {
+    text-align: center;
+    width: 100px;
+    padding: 15px;
+    background-color: #cccccc;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    border-radius: 7px;
+    position: relative;
+    top: 170px;
+  }
+
+  .restart_btn:hover {
+    cursor: pointer;
+    background-color: #aaaaaa;
+  }

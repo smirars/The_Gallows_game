@@ -13,10 +13,12 @@ let emptyWord = document.getElementById('word_container')
 const letterButtons = document.querySelectorAll('button')
 const winWindow = document.getElementById('modal_win')
 const loseWindow = document.getElementById('modal_lose')
+const loseWordShow = document.getElementById('lose_word')
 let letters = []
 let lettersToAnswer = []
 let misses = 0
 let correct = 0
+
 
 function showWinModal() {
     winWindow.classList.add('modal_show')
@@ -52,7 +54,6 @@ showInput()
 
 for (let i = 0; i < letterButtons.length; i++) {
     letterButtons[i].addEventListener('click', () => {
-        console.log(letterButtons[i].value)
         let found = false
         for (let j = 0; j < letters.length; j++) {
             if (letterButtons[i].value == letters[j]) {
@@ -83,12 +84,16 @@ submitButton.addEventListener('click', () => {
         alert("Поле ввода не может быть пустое!")
     } else  if (!(/^[\u0410-\u044f]+$/.test(inputField.value))) {
         alert("Поле ввода должно содержать только русские буквы!")
+        inputField.value = ''
     } else if (inputField.value.length < 4) {
         alert("Слово слишком короткое!")
+        inputField.value = ''
     } else if (inputField.value.length > 11) {
         alert("Слово слишком длинное!")
+        inputField.value = ''
     } else {
         const wordPlay = inputField.value
+        loseWordShow.innerHTML = wordPlay
         // wordToPlay.innerHTML = wordPlay
         for (let i = 0; i < deleteItems.length; i++) {
             deleteItems[i].style.display = "none"; 
